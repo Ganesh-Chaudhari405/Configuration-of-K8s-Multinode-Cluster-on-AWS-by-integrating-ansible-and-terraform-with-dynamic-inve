@@ -69,6 +69,8 @@
     - file:
        path: /cred
        state: touch  
+    - name: "setting up CNI networking"
+      command: kubectl apply  -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
     - name: "used for templating token"  
       template:
             src: master/templates/cred.j2
